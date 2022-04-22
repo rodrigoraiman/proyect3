@@ -7,10 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class:"navbar-brand" %>
+          <%= link_to "Inicio", root_path, class:"navbar-brand" %>
         </li>
         <li class="nav-item">
-          <%= link_to "About", pages_about_path, class:"navbar-brand" %>
+            <%= link_to "Blog", posts_path, class:"navbar-brand" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Nosotros", pages_about_path, class:"navbar-brand" %>
         </li>
         
         
@@ -20,10 +23,11 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown link
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><%= link_to "New Post", new_post_path, class:"dropdown-item" %>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
       </ul>
