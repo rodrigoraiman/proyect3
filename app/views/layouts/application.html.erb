@@ -14,7 +14,10 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <header>
+      <%= render 'layouts/navbar' %>
+      <%= render 'layout/alerts' %>
+    </header>
     <main>
       <%= yield %>
     <main>
