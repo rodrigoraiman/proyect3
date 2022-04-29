@@ -10,8 +10,17 @@ User.create(email: "user@example.com", password: "password", password_confirmati
 
 User.create(email: "user8@example.com", password: "password", password_confirmation: "password", name:'Yojan doe', role: User.roles[:user])
 
+category =  Category.first_or_create!(name:"Uncategorized", display_in_nav: true)
+Category.first_or_create!(name:"Carpintero", display_in_nav: false)
+Category.first_or_create!(name:"Arquitecto", display_in_nav: true)
+Category.first_or_create!(name:"Albañil", display_in_nav: true)
+
 10.times do |x|
-    post = Post.create(tittle: "title #{x}", body: "body #{x} Words go here", user_id: User.first.id)
+    puts "Creando Post #{x}"
+    post = Post.create(tittle: "Title #{x}",
+                    body: "body #{x} Words go here",
+                    user_id: User.first.id, 
+                    category: category)
 
     5.times do |y|
         Comment.create(body: "Comment #{y}", user_id: User.second.id, post_id: post.id)

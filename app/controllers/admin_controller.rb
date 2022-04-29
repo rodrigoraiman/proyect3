@@ -7,6 +7,7 @@ class AdminController < ApplicationController
   end
 
   def comments
+    @post = Post.includes(:user, :comments).find(params[:id])
   end
 
   def users
