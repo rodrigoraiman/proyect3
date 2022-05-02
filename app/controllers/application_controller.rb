@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
         @query = Post.ransack(params[:q])
     end
 
+    def is_admin!
+        redirect_to root_path, alert: "You are not authorized to do that." unless current_user&.admin?
+    end
+
     private
 
     def set_categories
