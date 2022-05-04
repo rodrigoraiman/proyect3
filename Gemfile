@@ -73,3 +73,8 @@ end
 
 gem 'devise'
 gem "ransack", "~> 3.1"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'activerecord-session_store'
+gem "omniauth-rails_csrf_protection"
+
