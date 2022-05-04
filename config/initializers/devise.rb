@@ -300,11 +300,7 @@ Devise.setup do |config|
     scope: 'email',
     strategy_class:OmniAuth::Strategies::GoogleOauth2
   )
-  config.omniauth :google_oauth2, 'ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"],
-   {
-    # name: 'google',
-    scope: 'calendar, plus.login plus.me'
-  }
+  
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
