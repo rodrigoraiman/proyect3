@@ -8,16 +8,21 @@
 
 User.create(email: "user@example.com", password: "password", password_confirmation: "password", name:'Joan', role: User.roles[:admin])
 
-User.create(email: "user8@example.com", password: "password", password_confirmation: "password", name:'Yojan doe', role: User.roles[:user])
+User.create(email: "user1@example.com", password: "password", password_confirmation: "password", name:'Yojan doe', role: User.roles[:user])
+User.create(email: "user2@example.com", password: "password", password_confirmation: "password", name:'Gonzalo Rojas', role: User.roles[:user])
+User.create(email: "user3@example.com", password: "password", password_confirmation: "password", name:'Javiera Torres', role: User.roles[:user])
 
 category =  Category.first_or_create!(name:"Uncategorized", display_in_nav: true)
-Category.first_or_create!(name:"Carpintero", display_in_nav: false)
+Category.first_or_create!(name:"Carpintero", display_in_nav: true)
 Category.first_or_create!(name:"Arquitecto", display_in_nav: true)
-Category.first_or_create!(name:"Albañil", display_in_nav: true)
+Category.first_or_create!(name:"Materiales", display_in_nav: true)
+Category.first_or_create!(name:"Electrico", display_in_nav: true)
+Category.first_or_create!(name:"Eficiencia Energetica", display_in_nav: true)
+Category.first_or_create!(name:"Aislacion", display_in_nav: true)
 
 10.times do |x|
     puts "Creando Post #{x}"
-    post = Post.create(tittle: "Title #{x}",
+    post = Post.create(tittle: "Publicacion #{x}",
                     body: "body #{x} Words go here",
                     user_id: User.first.id, 
                     category: category)

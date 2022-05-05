@@ -78,4 +78,5 @@ gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store'
 gem "omniauth-rails_csrf_protection"
 gem 'paypal-sdk-rest'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 

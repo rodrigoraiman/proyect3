@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google]
 
   has_many :posts
+  has_many :category, through: :posts
   has_many :comments, dependent: :destroy
 
   enum role: [:user, :admin]
