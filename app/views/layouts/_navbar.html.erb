@@ -16,10 +16,10 @@
           <%= link_to "Nosotros", pages_about_path, class:"navbar-brand" %>
         </li>
         <li class="nav-item">
-          <%= render 'layouts/pricing', "Pricing" , class:"navbar-brand" %>
+          <%= render 'layouts/pricing', "Pricing", pages_about_path, class:"navbar-brand" %>
         </li>
         <li class="nav-item">
-          <%= render 'layouts/categories', categories: @nav_categories, class:"navbar-brand" %>
+          <%= render 'layouts/categories', categories: @nav_categories %>
         </li>
         
         
