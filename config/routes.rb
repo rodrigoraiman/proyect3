@@ -19,6 +19,13 @@ Rails.application.routes.draw do
 
   }  
   
+  namespace :paypal do
+    resources :checkouts, only: [:create] do
+      collection do
+        get:complete
+      end
+    end
+  end
 
   get '/u/:id', to: 'users#profile', as: 'user'
 
@@ -28,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/about', to: 'pages#about'
+  get 'pages/pricing', to:'pages#pricing'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
