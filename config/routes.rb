@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :line_items
   resources :categories
   authenticated :user, ->(user) { user.admin? } do
     get 'admin', to: 'admin#index'
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   namespace :paypal do
     resources :checkouts, only: [:create] do
       collection do
-        get:complete
+      get 'line_item/new', to: 'line_items#new'
       end
     end
   end
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
     resources :comments
 
   end
-
+  
   get 'pages/about', to: 'pages#about'
   get 'pages/pricing', to:'pages#pricing'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
